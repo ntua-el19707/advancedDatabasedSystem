@@ -49,7 +49,7 @@ result = spark.sql("""
         WHERE CAST(`Weapon Used Cd` AS INT) >= 100 AND CAST(`Weapon Used Cd` AS INT) < 200
             AND `LAT` != '0' AND `LON` != '0'
     ), crimesInLa AS (
-        SELECTS /*+ BROADCAST(station)*/  
+        SELECTS /*+ BROADCAST(stations)*/  
             crimes.`Date OCC`,
             crimes.`LAT` AS crime_Lat,
             crimes.`LON` AS crime_Lon,
